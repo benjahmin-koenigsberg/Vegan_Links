@@ -990,21 +990,13 @@ export const Movies = [
         link: "https://www.youtube.com/watch?v=QOPLs_ogF-0",
         "": "",
     },
-    {
-        type: "Movies",
-        name: "Watership Down",
-        category: "Adventure, Animation, Drama, Thriller",
-        author: "",
-        description: "Animals",
-        link: "https://www.youtube.com/watch?v=9S26LA8Bk14",
-        "": "",
-    },
+
     {
         type: "Movies",
         name: "Watership Down",
         category: "Action, Adventure, Animation, Drama, Fantasy, Series",
         author: "",
-        description: "Animals",
+        description: "A group of rabbits flee their doomed warren and face many dangers to find and protect their new home.",
         link: "https://www.youtube.com/watch?v=Jq73sIty43k&t=1s",
         "": "",
     },
@@ -1081,13 +1073,14 @@ export const Movies = [
         link: "https://www.youtube.com/watch?v=jHaLJOYqvUQ",
         "": "",
     },
+
     {
-        type: "Vegan Gaming & Communities",
-        name: "Vegan Minecraft Server",
+        type: "Movies",
+        name: "Okja",
         category: "",
         author: "",
-        description: "Minecraft",
-        link: "https://veganminecraft.com/",
+        description: "Okja is a 2017 science-fantasy action-adventure film directed by Bong Joon-ho with a screenplay by Bong and Jon Ronson from a story by Bong.",
+        link: "https://www.youtube.com/watch?v=AjCebKn4iic&ab_channel=Netflix",
         "": "",
     },
 ]

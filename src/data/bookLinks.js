@@ -244,6 +244,15 @@ export const Books = [
     },
     {
         type: "Books",
+        name: "Obligate Carnivore: Cats, Dogs, and What it Really Means to be Vegan",
+        category: "",
+        author: "Jed Gillen",
+        description: "The book we've all been waiting for! Not only provides a definitive answer to the controversial question 'Can cats be vegan?' (they can!), but through examples, philosophical musings, and personal stories, explains why those in the ethical vegan community MUST feed their cats and dogs a vegan diet!",
+        link: "https://www.amazon.com/Obligate-Carnivore-Really-Means-Vegan/dp/0974218006",
+        "": "",
+    },
+    {
+        type: "Books",
         name: "Animal Oppression and Human Violence: Domesecration, Capitalism, and Global Conflict",
         category: "",
         author: "David A. Nibert",

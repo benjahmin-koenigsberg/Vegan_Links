@@ -35,6 +35,9 @@ export const categories4 = [
   { type: "category", name: "Celebrities", emoji: "🤩" },
   { type: "category", name: "Companion Animals", emoji: "🐶" },
 
+  { type: "category", name: "Frequently Asked Questions", emoji: '❔' },
+
+
 
 
 ];

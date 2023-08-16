@@ -25,6 +25,7 @@ import { Statistics } from './data/StatiticLinks';
 import { Celebrities } from './data/Celebrities';
 import { Apps } from './data/AppLinks';
 import { Podcasts } from './data/PodcastLinks';
+import { Faq } from './data/Faq';
 
 function App() {
 
@@ -49,6 +50,7 @@ const allLinks =
   ...Celebrities,
   ...Apps,
   ...Podcasts,
+  ...Faq
 ]
 
 const [ menuModal, setMenuModal] = useState(false)
@@ -59,7 +61,7 @@ const [content, setContent] = useState([])
     <div className="App">
       <Header />
       <Content content={content} setContent={setContent} allLinks={allLinks} />
-      <Footer menuModal={menuModal} setMenuModal={setMenuModal} content={content} setContent={setContent} allLinks={allLinks} />
+      <Footer menuModal={menuModal} setMenuModal={setMenuModal} content={content} setContent={setContent} allLinks={allLinks} Faq={Faq} />
     </div>
   );
 }
