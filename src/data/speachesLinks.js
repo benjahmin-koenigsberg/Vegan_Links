@@ -1,0 +1,38 @@
+export const Speaches = [
+    {
+        type: "Speaches",
+        name: "⭐️ Best Speech You Will Ever Hear (Gary Yourofsky)",
+        category: "",
+        author: "",
+        description: "",
+        link: "https://youtu.be/es6U00LMmC4?t=109",
+        "": "",
+    },
+    {
+        type: "Speaches",
+        name: "You Will Never Look at Your Life in the Same Way Again (Earthling Ed)",
+        category: "",
+        author: "",
+        description: "",
+        link: "https://www.youtube.com/watch?v=Z3u7hXpOm58",
+        "": "",
+    },
+    {
+        type: "Speaches",
+        name: "This Man Makes You Think (James Wildman)",
+        category: "",
+        author: "",
+        description: "",
+        link: "https://www.youtube.com/watch?v=E7JE8j5Ncmw",
+        "": "",
+    },
+    {
+        type: "Speaches",
+        name: "Why It's Time To Go Vegan | Alex O'Connor",
+        category: "",
+        author: "",
+        description: "",
+        link: "https://www.youtube.com/watch?v=gcVR2OVxPYw",
+        "": "",
+    },
+]

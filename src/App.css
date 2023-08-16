@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&display=swap');
+
+*{
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Header-container {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  background-color: green;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header-header{
+  font-size: 2rem;
+}
+
+.Header-icon {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+
+.Footer-container{
+  width: 100%;
+  height: 5rem;
+  background-color: lightgray;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.Content-container{
+  padding: 0;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+  margin: auto 0;
+  background-color: 	#DCDCDC;
+}
+
+.CategoryCard-container{
+  height: 8rem;
+  width: 8rem;
+  background-color: gray;
+  margin: .5rem .5rem;
+  border-radius: 1rem;
+  display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LinkCard-container {
+  width: 95%;
+  background-color: gray;
+  margin: .5rem .5rem;
+  border-radius: 1rem;
+   display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LinkCard-name{
+  color: black;
+  font-weight: 700;
+  //background: white;
+  width: 100%;
+}
+
+.LinkCard-category{
+  color: white;
+
+}
+
+.LinkCard-button{
+  border: solid .1rem black;
+  padding: .2rem 1rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.CategoryCard-container:hover{
+transform: scale(115%);
+}
+
+.CategoryCard-name{
+font-size: .75rem;
+}
+
+.CategoryCard-emoji{
+font-size: 3.5rem;
+}
+
+
+.Footer-icon-border{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MenuModal-container{
+  background-color: 	#C0C0C0;
+  height: 60vh;
+  width: 100%;
+  position: fixed;
+  bottom: 5rem;
+  overflow-x: scroll;
+}
+
+.MenuModal-category{
+margin: .75rem;
+cursor: pointer;
+}
+
+.MenuModal-category:hover{
+transform: scale(125%);
+font-weight: bold;
+}
+
+
+.dissapear{
+  display: none;
+}
