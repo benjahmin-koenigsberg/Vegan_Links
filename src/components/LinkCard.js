@@ -108,7 +108,7 @@ const LinkCard = ({ category, content, setContent, allLinks }) => {
             <button onClick={copyLink}>
               <FontAwesomeIcon
                 className="LinkCard-button"
-                icon={faShareNodes}
+                icon={faCopy}
               />
             </button>
             <ToastContainer />
