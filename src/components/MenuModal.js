@@ -1,5 +1,6 @@
 import React from 'react'
 import { categories4 } from '../data/categories';
+import "../styles/MenuModal.css";
 
 const MenuModal = ({ content, setContent, allLinks }) => {
 

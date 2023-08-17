@@ -7,6 +7,7 @@ import { faC, faLink } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import "../styles/LinkCard.css";
 
 const LinkCard = ({ category, content, setContent, allLinks }) => {
 
@@ -89,10 +90,12 @@ const LinkCard = ({ category, content, setContent, allLinks }) => {
       <div className="LinkCard-inner-container">
         <p className="LinkCard-emoji">{category?.emoji}</p>
         <p className="LinkCard-name">{category?.name}</p>
-        <p className="LinkCard-description">{category?.description.length > 350 ? (<div>
-          <p>`${category.description.slice(0, 350)}`</p>
-          <button className='LinkCard-readmore'>...</button>
-          </div> )
+        <p className="LinkCard-description">{category?.description.length > 350 ?
+        (
+        <div className='LinkCard-description-overflow'>
+          <p>{category.description}</p>
+        </div>
+          )
            : category.description}</p>
         <p className="LinkCard-category">{category?.category}</p>
               { category.type === 'Frequently Asked Questions' ? ("") : (<div className="LinkCard-buttons-container">

@@ -6,10 +6,9 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { faShuffle } from '@fortawesome/free-solid-svg-icons';
 import MenuModal from './MenuModal';
+import '../styles/Footer.css';
 
 const Footer = ({menuModal, setMenuModal, content, setContent, allLinks, Faq }) => {
-
-
 
   const shuffleContent = (prev) => {
     const newArr = shuffle(content)

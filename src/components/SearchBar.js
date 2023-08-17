@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { categories4 } from '../data/categories';
+import '../styles/SearchBar.css'
 
 const SearchBar = ({ input, setInput, content, setContent, allLinks }) => {
 

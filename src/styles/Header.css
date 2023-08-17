@@ -1,0 +1,18 @@
+.Header-container {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(58,179,0,1) 28%, rgba(0,212,255,1) 100%);
+  justify-content: center;
+  align-items: center;
+}
+
+.Header-header{
+  font-size: 2rem;
+}
+
+.Header-icon {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}

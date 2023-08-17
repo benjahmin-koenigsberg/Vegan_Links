@@ -5,6 +5,7 @@ import { categories4 } from '../data/categories'
 import LinkCard from './LinkCard'
 import { Movies } from '../data/movieLinks';
 import SearchBar from './SearchBar'
+import '../styles/Content.css';
 
 
 const Content = ({ content, setContent, allLinks }) => {

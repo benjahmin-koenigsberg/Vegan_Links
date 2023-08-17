@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/CategoryCard.css';
 
 const CategoryCard = ({ category, content, setContent, allLinks}) => {
 

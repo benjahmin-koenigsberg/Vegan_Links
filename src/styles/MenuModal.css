@@ -1,0 +1,21 @@
+.MenuModal-container{
+  background-color: 	#C0C0C0;
+  height: 60vh;
+  width: 80%;
+  position: fixed;
+  bottom: 5rem;
+  overflow-x: scroll;
+  left: 10%;
+  right: 10%;
+  border-radius: 1rem;
+}
+
+.MenuModal-category{
+margin: .75rem;
+cursor: pointer;
+}
+
+.MenuModal-category:hover{
+transform: scale(125%);
+font-weight: bold;
+}
