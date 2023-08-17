@@ -1,21 +1,26 @@
 .MenuModal-container{
-  background-color: 	#C0C0C0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #C0C0C0;
   height: 60vh;
-  width: 80%;
+  width: 70%;
   position: fixed;
   bottom: 5rem;
-  overflow-x: scroll;
-  left: 10%;
-  right: 10%;
+  overflow: scroll;
+  left: 15%;
+  right: 15%;
   border-radius: 1rem;
 }
 
 .MenuModal-category{
 margin: .75rem;
 cursor: pointer;
+transition: all .2s ease-in-out;
 }
 
 .MenuModal-category:hover{
-transform: scale(125%);
+transform: scale(1.2);
 font-weight: bold;
 }

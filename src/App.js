@@ -19,7 +19,7 @@ const [content, setContent] = useState([])
   return (
     <div className="App">
       <Header />
-      <Content content={content} setContent={setContent} allLinks={allLinks} />
+     <Content content={content} setContent={setContent} allLinks={allLinks} />
       <Footer menuModal={menuModal} setMenuModal={setMenuModal} content={content} setContent={setContent} allLinks={allLinks} Faq={Faq} />
     </div>
   );

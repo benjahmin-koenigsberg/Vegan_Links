@@ -7,9 +7,9 @@ import '../styles/SearchBar.css'
 
 const SearchBar = ({ input, setInput, content, setContent, allLinks }) => {
 
-  const goHome = () => {
-    setContent(categories4)
-  }
+  // const goHome = () => {
+  //   setContent(categories4)
+  // }
 
   const handleInput = (e) => {
     setInput(e.target.value)
@@ -55,11 +55,11 @@ const SearchBar = ({ input, setInput, content, setContent, allLinks }) => {
 
         </button>
       </div>
-      <div className="SearchBar-button-background" onClick={goHome}>
+      {/* <div className="SearchBar-button-background" onClick={goHome}>
         <button>
           <FontAwesomeIcon className='SearchBar-home-button' icon={faHome} />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
