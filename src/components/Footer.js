@@ -4,9 +4,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faShuffle } from '@fortawesome/free-solid-svg-icons';
 import MenuModal from './MenuModal';
 
 const Footer = ({menuModal, setMenuModal, content, setContent, allLinks, Faq }) => {
+
+
+
+  const shuffleContent = (prev) => {
+    const newArr = shuffle(content)
+    setContent([...newArr])
+  }
+
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
 
   let favArr = [];
 
@@ -26,7 +43,7 @@ getStorage()
   }
 
   function faq(){
-  setContent(Faq)
+  setContent([...Faq])
   }
 
   return (
@@ -34,8 +51,8 @@ getStorage()
      { menuModal? <MenuModal content={content} setContent={setContent} allLinks={allLinks} /> : "" }
       <div className="Footer-container">
         <FontAwesomeIcon
-          icon={faQuestion}
-          className="text-4xl Footer-icon" onClick={faq}></FontAwesomeIcon>
+          icon={faShuffle}
+          className="text-4xl Footer-icon" onClick={shuffleContent}></FontAwesomeIcon>
         <div className="Footer-icon-border">
           <FontAwesomeIcon
             icon={faList}

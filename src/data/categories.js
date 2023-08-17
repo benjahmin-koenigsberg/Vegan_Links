@@ -11,7 +11,7 @@ export const categories4 = [
 
 
   { type: "category", name: "Protien Myths Debunked", emoji: "🧬" },
-  { type: "category", name: "Arguments Debunked", emoji: "😳" },
+  { type: "category", name: "Arguments", emoji: "😳" },
   { type: "category", name: "Animal Ag. Statistics", emoji: "📊" },
 
   { type: "category", name: "Activism", emoji: "✊" },

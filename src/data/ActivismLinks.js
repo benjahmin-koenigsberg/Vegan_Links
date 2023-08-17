@@ -11,6 +11,15 @@ export const Activism = [
     },
     {
         type: "Activism",
+        name: "Connect For Animals",
+        category: "all",
+        author: "",
+        description: "Connect For Animals (CFA) is a platform for people who want to create a better world for animals, starting by ending factory farming. Find events, groups, and like- minded people—and learn how to be more effective at advocating for animals.",
+        link: "https://connectforanimals.com",
+        "": "",
+    },
+    {
+        type: "Activism",
         name: "Animal Rights Map",
         category: "all",
         author: "",

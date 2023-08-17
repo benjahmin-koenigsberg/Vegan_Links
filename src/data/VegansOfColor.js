@@ -10,6 +10,15 @@ export const VegansOfColor = [
     },
     {
         type: "Vegans of Color",
+        name: "Black Vegans Rock",
+        category: "",
+        author: "",
+        description: "a list of influential Black vegans who were doing incredible work to dismantle the stereotype that veganism was a 'white person’s' thing.",
+        link: "http://www.blackvegansrock.com/",
+        "": "",
+    },
+    {
+        type: "Vegans of Color",
         name: "The Vegan Race Wars",
         category: "",
         author: "",

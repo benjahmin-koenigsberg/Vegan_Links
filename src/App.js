@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Content from './components/Content';
@@ -9,8 +9,11 @@ import { allLinks } from './data/AllLinks';
 
 function App() {
 
+
 const [ menuModal, setMenuModal] = useState(false)
 const [content, setContent] = useState([])
+
+  useEffect(() => { }, [content])
 
 
   return (

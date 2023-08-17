@@ -89,31 +89,36 @@ const LinkCard = ({ category, content, setContent, allLinks }) => {
       <div className="LinkCard-inner-container">
         <p className="LinkCard-emoji">{category?.emoji}</p>
         <p className="LinkCard-name">{category?.name}</p>
-        <p className="LinkCard-description">{category?.description}</p>
+        <p className="LinkCard-description">{category?.description.length > 350 ? (<div>
+          <p>`${category.description.slice(0, 350)}`</p>
+          <button className='LinkCard-readmore'>...</button>
+          </div> )
+           : category.description}</p>
         <p className="LinkCard-category">{category?.category}</p>
-        <div className="LinkCard-buttons-container">
-          <a href={category?.link} id="link">
-            <div className="LinkCard-button-background">
-              <button>
-                <FontAwesomeIcon className="LinkCard-button" icon={faLink} />
-              </button>
-            </div>
-          </a>
-          <div className="LinkCard-button-background" onClick={addToFavorites}>
-            <button>
-              <FontAwesomeIcon className={ isFavorite ? "favorite LinkCard-button" : "LinkCard-button" }  icon={faHeart} />
-            </button>
-          </div>
-          <div className="LinkCard-button-background">
-            <button onClick={copyLink}>
-              <FontAwesomeIcon
-                className="LinkCard-button"
-                icon={faCopy}
-              />
-            </button>
-            <ToastContainer />
-          </div>
-        </div>
+              { category.type === 'Frequently Asked Questions' ? ("") : (<div className="LinkCard-buttons-container">
+                  <a href={category?.link} id="link">
+                      <div className="LinkCard-button-background">
+                          <button>
+                              <FontAwesomeIcon className="LinkCard-button" icon={faLink} />
+                          </button>
+                      </div>
+                  </a>
+                  <div className="LinkCard-button-background" onClick={addToFavorites}>
+                      <button>
+                          <FontAwesomeIcon className={isFavorite ? "favorite LinkCard-button" : "LinkCard-button"} icon={faHeart} />
+                      </button>
+                  </div>
+                  <div className="LinkCard-button-background">
+                      <button onClick={copyLink}>
+                          <FontAwesomeIcon
+                              className="LinkCard-button"
+                              icon={faCopy}
+                          />
+                      </button>
+                      <ToastContainer />
+                  </div>
+              </div>) }
+
       </div>
     </div>
   );

@@ -18,6 +18,9 @@ import { Celebrities } from './Celebrities';
 import { Apps } from './AppLinks';
 import { Podcasts } from './PodcastLinks';
 import { Faq } from './Faq';
+import { Resturants } from './ResturantLinks';
+import { CompanionAnimals } from './CompanionAnimalLinks';
+import { Fashion } from './FashionLinks';
 
 export const allLinks =
     [
@@ -40,5 +43,8 @@ export const allLinks =
         ...Celebrities,
         ...Apps,
         ...Podcasts,
-        ...Faq
+        ...Faq,
+        ...Resturants,
+        ...CompanionAnimals,
+        ...Fashion
     ]
