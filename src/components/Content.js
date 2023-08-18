@@ -15,12 +15,10 @@ const { content, setContent, allLinks, input, setInput, categories4 } = useConte
     <>
       <SearchBar />
       <div className='Content-container'>
-        {!content[0]?.link ? content.map(category => <CategoryCard category={category}
+        {!content[0]?.link ? content.map( category => <CategoryCard category={category}
           key={category.name}
            />
-        ) : content.map(category => <LinkCard category={category}
-          key={category.name}
-           />
+        ) : content.map( category => <LinkCard category={category} key={category.name} />
         )}
       </div>
     </>

@@ -3,12 +3,75 @@ import { useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import LinkContext from '../context/LinkContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy, faHeart, faLink, faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faHeart, faLink } from '@fortawesome/free-solid-svg-icons';
 import "../styles/LinkCard.css";
 
 const LinkCard = ({ category }) => {
 
-  const { content, setContent, allLinks, isFavorite, setIsFavorite, addToFavorites, copyLink } = useContext(LinkContext)
+  const { isFavorite, setIsFavorite } = useContext(LinkContext)
+
+
+  const addToFavorites = (category) => {
+
+
+    if (!isFavorite) {
+      setIsFavorite(true)
+      if (!category.description) category.description = "  ";
+      const favObj = {
+      name: category.name,
+      link: category.link,
+      type: category.type,
+      category: category.category,
+      description: category.description,
+    };
+    localStorage.setItem(category.name, JSON.stringify(favObj));
+    //  toast(`Link added to favorites`, {
+    //     position: "top-right",
+    //     autoClose: 1000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "light",
+    //     type: "error",
+    //   });
+  }
+    else {
+      setIsFavorite(false);
+      localStorage.removeItem(category.name);
+      // toast(`Link removed from favorites`, {
+      //   position: "top-right",
+      //   autoClose: 1000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "light",
+      //   type: "info",
+      // });
+    };
+    return;
+  };
+
+
+      const copyLink = (category) => {
+        navigator.clipboard.writeText(category.link);
+        toast(`URL copied to clipboard!`, {
+            position: "top-right",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            type: "success",
+        });
+    }
+
+
 
   return (
     <div className="LinkCard-container" id={category.name}>
@@ -37,7 +100,7 @@ const LinkCard = ({ category }) => {
                       </button>
                   </div>
                   <div className="LinkCard-button-background">
-                      <button onClick={()=>copyLink(category)}>
+                      <button onClick={ ()=>copyLink(category)}>
                           <FontAwesomeIcon
                               className="LinkCard-button"
                               icon={faCopy}
