@@ -82,3 +82,11 @@ font-size: 1.1rem;
   font-size: 1.5rem;
 
 }
+
+.favorite{
+  color: red;
+}
+
+.copied{
+  color: lightblue;
+}

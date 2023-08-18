@@ -1,25 +1,17 @@
 import React from 'react'
-import { categories4 } from '../data/categories';
+import { useContext } from 'react';
+import LinkContext from '../context/LinkContext';
 import "../styles/MenuModal.css";
 
-const MenuModal = ({ content, setContent, allLinks }) => {
+const MenuModal = () => {
 
-    function handleContent(e) {
-        console.log(e.currentTarget.id)
-        const filteredLinks = allLinks.filter(element => element.type == e.currentTarget.id)
-        setContent(filteredLinks)
-        document.getElementById('menu').className = 'dissapear'
-    }
-
-function backHome(){
-    setContent(categories4)
-}
+ const {content, setContent, allLinks, categories4, handleContent, goHome } = useContext(LinkContext)
 
     return (
         <div className="MenuModal-container" id="menu">
-            <h3 className='MenuModal-category' onClick={backHome}>Home</h3>
+            <h3 className='MenuModal-category' onClick={goHome}>Home</h3>
             {categories4.map((category) => (
-                <h3 className="MenuModal-category" onClick={handleContent} id={category.name}>{category.name}</h3>
+                <h3 className="MenuModal-category" onClick={ (e)=>handleContent(e)} id={category.name}>{category.name}</h3>
             ))}
         </div>
     );

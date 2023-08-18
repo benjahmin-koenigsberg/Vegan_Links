@@ -1,89 +1,14 @@
 import React from 'react'
-import { useState  } from 'react';
+import { useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import LinkContext from '../context/LinkContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faC, faLink } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faCopy } from '@fortawesome/free-solid-svg-icons';
-import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faHeart, faLink, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import "../styles/LinkCard.css";
 
-const LinkCard = ({ category, content, setContent, allLinks }) => {
+const LinkCard = ({ category }) => {
 
-  function handleContent(e) {}
-
-  const [isFavorite, setIsFavorite] = useState(false);
-  // const [favArray, updateFavArray] = useState([])
-
-  const addToFavorites = () => {
-    if (!category.description) category.description = "  ";
-    const favObj = {
-      name: category.name,
-      link: category.link,
-      type: category.type,
-      category: category.category,
-      description: category.description,
-    };
-    localStorage.setItem(category.name, JSON.stringify(favObj));
-
-    if (!isFavorite) {
-      setIsFavorite(true);
-      toast(`Link added to favorites`, {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        type: "error",
-      });
-    } else {
-        setIsFavorite(false);
-           localStorage.removeItem(category.name);
-        toast(`Link removed from favorites`, {
-            position: "top-right",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            type: "info",
-        });
-
-        //   const getStorage = () => {
-        //     let favArr = [];
-        //       for (let i = 0; i <= localStorage.length; i++) {
-        //           let favObj = localStorage.getItem(localStorage.key(i));
-        //           if (favObj !== "INFO") favArr.push(JSON.parse(favObj));
-        //           setContent(favArr);
-        //          document.location.reload();
-        //       }
-        //   };
-        //   getStorage();
-      };
-      return;
-        };
-
-
-  function copyLink() {
-    navigator.clipboard.writeText(category.link);
-    toast(`URL copied to clipboard!`, {
-      position: "top-right",
-      autoClose: 2500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      type: "success",
-    });
-  }
+  const { content, setContent, allLinks, isFavorite, setIsFavorite, addToFavorites, copyLink } = useContext(LinkContext)
 
   return (
     <div className="LinkCard-container" id={category.name}>
@@ -106,13 +31,13 @@ const LinkCard = ({ category, content, setContent, allLinks }) => {
                           </button>
                       </div>
                   </a>
-                  <div className="LinkCard-button-background" onClick={addToFavorites}>
+                  <div className="LinkCard-button-background" onClick={ () => addToFavorites(category) }>
                       <button>
-                          <FontAwesomeIcon className={isFavorite ? "favorite LinkCard-button" : "LinkCard-button"} icon={faHeart} />
+                          <FontAwesomeIcon className={ isFavorite ? "LinkCard-button" : "LinkCard-button"} icon={faHeart} />
                       </button>
                   </div>
                   <div className="LinkCard-button-background">
-                      <button onClick={copyLink}>
+                      <button onClick={()=>copyLink(category)}>
                           <FontAwesomeIcon
                               className="LinkCard-button"
                               icon={faCopy}
