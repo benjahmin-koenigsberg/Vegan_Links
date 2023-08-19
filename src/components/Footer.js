@@ -9,6 +9,7 @@ import '../styles/Footer.css';
 const Footer = () => {
 
 const {
+  clearStorage,
   AboutSections,
   categories4,
   content,
@@ -44,10 +45,7 @@ const {
           icon={faShuffle}
           className="text-4xl Footer-icon" onClick={shuffleContent}></FontAwesomeIcon>
 
-        <FontAwesomeIcon icon={faHeart} className="text-4xl Footer-icon" onClick={ () => {
-          getStorage()
-          setContent(favArr)
-        } }></FontAwesomeIcon>
+        <FontAwesomeIcon icon={faHeart} className="text-4xl Footer-icon" onClick={getStorage} onDoubleClickCapture={clearStorage} ></FontAwesomeIcon>
       </div>
     </>
   );

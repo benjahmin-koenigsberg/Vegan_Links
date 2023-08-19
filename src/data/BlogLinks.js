@@ -1,5 +1,3 @@
-import CategoryCard from '../components/CategoryCard'
-
 export const Blogs = [
     {
         type: "Blogs and Magazines",

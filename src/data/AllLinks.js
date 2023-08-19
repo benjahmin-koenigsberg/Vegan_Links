@@ -17,11 +17,12 @@ import { Statistics } from './StatiticLinks';
 import { Celebrities } from './Celebrities';
 import { Apps } from './AppLinks';
 import { Podcasts } from './PodcastLinks';
-import { Faq } from './Faq';
 import { Resturants } from './ResturantLinks';
 import { CompanionAnimals } from './CompanionAnimalLinks';
 import { Fashion } from './FashionLinks';
 import { Blogs } from './BlogLinks';
+
+
 
 export const allLinks =
     [
@@ -44,9 +45,10 @@ export const allLinks =
         ...Celebrities,
         ...Apps,
         ...Podcasts,
-        // ...Faq,
         ...Resturants,
         ...CompanionAnimals,
         ...Fashion,
         ...Blogs,
     ]
+
+   // allLinks.forEach( (el, index) => el.id = index )

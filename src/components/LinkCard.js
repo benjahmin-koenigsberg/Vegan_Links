@@ -1,6 +1,8 @@
 import React from 'react'
 import { useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import LinkContext from '../context/LinkContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faHeart, faLink } from '@fortawesome/free-solid-svg-icons';
@@ -8,68 +10,31 @@ import "../styles/LinkCard.css";
 
 const LinkCard = ({ category }) => {
 
-  const { isFavorite, setIsFavorite } = useContext(LinkContext)
+  const { isFavorite, setIsFavorite, favoritesArray, setFavoritesArray, addToFavorites, copyLink } = useContext(LinkContext)
 
 
-  const addToFavorites = (category) => {
+  // const addToFavorites = (category) => {
+  //   if (!isFavorite) {
+  //     setIsFavorite(true)
+  //     // if (!category.description) category.description = "  ";
+  //     const favObj = {
+  //     name: category.name,
+  //     link: category.link,
+  //     type: category.type,
+  //     category: category.category,
+  //     description: category.description,
+  //   };
+  //   localStorage.setItem(category.name, JSON.stringify(favObj));
+  //    toast(`Link added to favorites`)
+  // }
+  //   else {
+  //     setIsFavorite(false);
+  //     localStorage.removeItem(category.name);
+  //     toast(`Link removed from favorites`)
+  //   };
+  //   return;
+  // };
 
-
-    if (!isFavorite) {
-      setIsFavorite(true)
-      if (!category.description) category.description = "  ";
-      const favObj = {
-      name: category.name,
-      link: category.link,
-      type: category.type,
-      category: category.category,
-      description: category.description,
-    };
-    localStorage.setItem(category.name, JSON.stringify(favObj));
-    //  toast(`Link added to favorites`, {
-    //     position: "top-right",
-    //     autoClose: 1000,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: "light",
-    //     type: "error",
-    //   });
-  }
-    else {
-      setIsFavorite(false);
-      localStorage.removeItem(category.name);
-      // toast(`Link removed from favorites`, {
-      //   position: "top-right",
-      //   autoClose: 1000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      //   type: "info",
-      // });
-    };
-    return;
-  };
-
-
-      const copyLink = (category) => {
-        navigator.clipboard.writeText(category.link);
-        toast(`URL copied to clipboard!`, {
-            position: "top-right",
-            autoClose: 2500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            type: "success",
-        });
-    }
 
 
 
@@ -87,7 +52,7 @@ const LinkCard = ({ category }) => {
            : category.description}</p>
         <p className="LinkCard-category">{category?.category}</p>
               { category.type === 'Frequently Asked Questions' ? ("") : (<div className="LinkCard-buttons-container">
-                  <a href={category?.link} id="link">
+                  <a href={category.link} id="link">
                       <div className="LinkCard-button-background">
                           <button>
                               <FontAwesomeIcon className="LinkCard-button" icon={faLink} />
@@ -106,7 +71,18 @@ const LinkCard = ({ category }) => {
                               icon={faCopy}
                           />
                       </button>
-                      <ToastContainer />
+            <ToastContainer
+              position="top-right"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
                   </div>
               </div>) }
 

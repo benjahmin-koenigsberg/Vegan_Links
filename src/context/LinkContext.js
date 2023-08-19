@@ -1,9 +1,12 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import { Faq } from '../data/Faq';
 import { allLinks } from '../data/AllLinks';
 import { categories4 } from '../data/categories'
 import { AboutSections } from '../data/AboutSections';
 import "../styles/LinkCard.css";
+import { v4 as uuidv4 } from 'uuid'
+import { toast } from 'react-toastify';
+import LinkCard from '../components/LinkCard';
 
 const LinkContext = createContext();
 
@@ -11,10 +14,15 @@ export const LinkProvider = ({ children }) => {
 
     const [menuModal, setMenuModal] = useState(false)
     const [content, setContent] = useState(categories4)
-    const [isFavorite, setIsFavorite] = useState(false);
+    const [isFavorite, setIsFavorite] = useState();
     const [input, setInput] = useState('')
+    const [ favoritesArray , setFavoritesArray ] = useState([{}])
 
-    let favArr = [];
+    useEffect(()=>{
+    },[content])
+
+    //let favArr = [];
+
 
     const shuffleContent = (prev) => {
         const newArr = shuffle(content)
@@ -40,18 +48,25 @@ export const LinkProvider = ({ children }) => {
         setInput(e.target.value)
     }
 
-    const getStorage = () => {
-        for (let i = 0; i < localStorage.length; i++) {
-            let favObj = localStorage.getItem(localStorage.key(i));
-            if (favObj !== 'INFO')
-                favArr.push(JSON.parse(favObj));
-        }
+const getStorage = () => {
+
+       const favoritesArr = JSON.parse(localStorage.getItem('favorites'))
+       // const favoritesArr = localStorage.getItem('favorites')
+        //favoritesArr.forEach(element => console.log(element.name))
+        if (favoritesArr) {
+        const filteredArr = favoritesArr.filter( el => el.name !== undefined )
+        setContent(filteredArr)
+        } else
+            setContent([{ name: 'No favorites', link: '##', description: '  ', type: 'Frequently Asked Questions' }])
     };
 
+    const clearStorage = () => {
+    localStorage.clear()
+    }
+
     function handleMenu(e) {
-        console.log(e)
+       // console.log(e)
         setMenuModal((prev) => !prev)
-        //  setContent(Movies)
     }
 
     function faq() {
@@ -67,67 +82,6 @@ export const LinkProvider = ({ children }) => {
     }
 
 
-    // const addToFavorites = (category, e) => {
-    //     console.log(category)
-    //     if (!category.description) category.description = "  ";
-    //     const favObj = {
-    //         name: category.name,
-    //         link: category.link,
-    //         type: category.type,
-    //         category: category.category,
-    //         description: category.description,
-    //     };
-    //     localStorage.setItem(category.name, JSON.stringify(favObj));
-
-    //     if (!isFavorite) {
-    //         setIsFavorite(true);
-    //         toast(`Link added to favorites`, {
-    //             position: "top-right",
-    //             autoClose: 1000,
-    //             hideProgressBar: false,
-    //             closeOnClick: true,
-    //             pauseOnHover: true,
-    //             draggable: true,
-    //             progress: undefined,
-    //             theme: "light",
-    //             type: "error",
-    //         });
-    //     } else {
-    //         setIsFavorite(false);
-    //         localStorage.removeItem(category.name);
-    //         toast(`Link removed from favorites`, {
-    //             position: "top-right",
-    //             autoClose: 1000,
-    //             hideProgressBar: false,
-    //             closeOnClick: true,
-    //             pauseOnHover: true,
-    //             draggable: true,
-    //             progress: undefined,
-    //             theme: "light",
-    //             type: "info",
-    //         });
-    //     };
-
-    //     return;
-    // };
-
-
-    // function copyLink(category) {
-    //     navigator.clipboard.writeText(category.link);
-    //     toast(`URL copied to clipboard!`, {
-    //         position: "top-right",
-    //         autoClose: 2500,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "light",
-    //         type: "success",
-    //     });
-    // }
-
-
     function updateContent() {
 
         const filtered = allLinks.filter((item) => {
@@ -138,16 +92,52 @@ export const LinkProvider = ({ children }) => {
                 item.type.toLowerCase().includes(`${input.toLowerCase()}`)
 
             ) {
-                return true;
+                setContent(filtered)
             }
         });
-        setContent(filtered)
+
+    }
+
+
+
+    const copyLink = (category) => {
+        navigator.clipboard.writeText(category.link);
+        toast(`URL copied to clipboard!`)
+    }
+
+    const addToFavorites = (category) => {
+
+        if (true) {
+        //setIsFavorite(true)
+
+        const newFavorite = {
+            id: uuidv4(),
+            name: category.name,
+            type: category.type,
+            category: category.category,
+            description: category.description,
+            link: category.link,
+        }
+        setFavoritesArray([newFavorite, ...favoritesArray])
+        toast(`Link added to favorites`)
+        localStorage.setItem('favorites', JSON.stringify(favoritesArray));
+        }
+        else {
+           // setIsFavorite(false)
+            console.log('Already in favorites')
+
+        }
     }
 
 
     return (
         <LinkContext.Provider
             value={{
+                clearStorage,
+                copyLink,
+                addToFavorites,
+                favoritesArray,
+                setFavoritesArray,
                 updateContent,
                 allLinks,
                 input,
@@ -158,7 +148,7 @@ export const LinkProvider = ({ children }) => {
                 setMenuModal,
                 isFavorite,
                 setIsFavorite,
-                favArr,
+              //  favArr,
                 categories4,
                 shuffleContent,
                 shuffle,
