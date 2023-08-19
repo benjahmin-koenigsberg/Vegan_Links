@@ -10,17 +10,8 @@ const Footer = () => {
 
 const {
   clearStorage,
-  AboutSections,
-  categories4,
-  content,
-  setContent,
-  allLinks,
   menuModal,
-  setMenuModal,
-  Faq,
   shuffleContent,
-  favArr,
-  getStorage,
   handleMenu,
   goHome,
   goAbout,

@@ -5,7 +5,7 @@ import '../styles/CategoryCard.css';
 
 const CategoryCard = ({category}) => {
 
-const { content, allLinks, setContent, handleContent } = useContext(LinkContext)
+const {  handleContent } = useContext(LinkContext)
 
     return (
         <div className="CategoryCard-container" id={category.name} onClick={(e) => handleContent(e)}>

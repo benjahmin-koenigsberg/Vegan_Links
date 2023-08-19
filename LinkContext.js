@@ -1,9 +1,13 @@
+/** @format */
+
 import { createContext, useState, useEffect } from "react";
+import { Faq } from "../data/Faq";
 import { allLinks } from "../data/AllLinks";
 import { categories4 } from "../data/categories";
 import { AboutSections } from "../data/AboutSections";
 import "../styles/LinkCard.css";
 import { toast } from "react-toastify";
+//import LinkCard from "../components/LinkCard";
 
 const LinkContext = createContext();
 
@@ -29,7 +33,7 @@ export const LinkProvider = ({ children }) => {
   };
 
   function handleContent(e) {
-    //setMenuModal((prev) => !prev);
+    setMenuModal((prev) => !prev);
     const filteredLinks = allLinks.filter(
       (element) => element.type === e.currentTarget.id
     );
@@ -76,6 +80,9 @@ export const LinkProvider = ({ children }) => {
     setMenuModal((prev) => !prev);
   }
 
+  function faq() {
+    setContent([...Faq]);
+  }
 
   const goHome = () => {
     setContent(categories4);
@@ -86,21 +93,16 @@ export const LinkProvider = ({ children }) => {
   };
 
   function updateContent() {
-
-      const filtered = allLinks.filter((item) => {
-
-          if (
-
-              item.name.toLowerCase().includes(`${input.toLowerCase()}`) ||
-              item.category.toLowerCase().includes(`${input.toLowerCase()}`) ||
-              item.description.toLowerCase().includes(`${input.toLowerCase()}`) ||
-              item.type.toLowerCase().includes(`${input.toLowerCase()}`)
-
-          ) {
-              return true;
-          }
-      });
-      setContent(filtered)
+    const filtered = allLinks.filter((item) => {
+      if (
+        item.name.toLowerCase().includes(`${input.toLowerCase()}`) ||
+        item.category.toLowerCase().includes(`${input.toLowerCase()}`) ||
+        item.description.toLowerCase().includes(`${input.toLowerCase()}`) ||
+        item.type.toLowerCase().includes(`${input.toLowerCase()}`)
+      ) {
+        setContent(filtered);
+      }
+    });
   }
 
   const copyLink = (category) => {
@@ -131,6 +133,7 @@ export const LinkProvider = ({ children }) => {
         handleInput,
         getStorage,
         handleMenu,
+        faq,
         goHome,
         goAbout,
       }}>

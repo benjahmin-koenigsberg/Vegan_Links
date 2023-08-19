@@ -1,5 +1,5 @@
 import React from 'react'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,31 +10,35 @@ import "../styles/LinkCard.css";
 
 const LinkCard = ({ category }) => {
 
-  const { isFavorite, setIsFavorite, favoritesArray, setFavoritesArray, addToFavorites, copyLink, goToFavs } = useContext(LinkContext)
+  const [isFavorite, setIsFavorite] = useState(false);
 
 
-  // const addToFavorites = (category) => {
-  //   if (!isFavorite) {
-  //     setIsFavorite(true)
-  //     // if (!category.description) category.description = "  ";
-  //     const favObj = {
-  //     name: category.name,
-  //     link: category.link,
-  //     type: category.type,
-  //     category: category.category,
-  //     description: category.description,
-  //   };
-  //   localStorage.setItem(category.name, JSON.stringify(favObj));
-  //    toast(`Link added to favorites`)
-  // }
-  //   else {
-  //     setIsFavorite(false);
-  //     localStorage.removeItem(category.name);
-  //     toast(`Link removed from favorites`)
-  //   };
-  //   return;
-  // };
+  const { copyLink } = useContext(LinkContext)
 
+
+  const addToFavorites = (category) => {
+
+    const favObj = {
+      name: category.name,
+      link: category.link,
+      type: category.type,
+      category: category.category,
+      description: category.description,
+    };
+
+    if (!isFavorite) {
+      setIsFavorite(true);
+      if (!category.description) category.description = '  ';
+      localStorage.setItem(category.name, JSON.stringify(favObj))
+      toast.success(`Link added to favorites`)
+    }
+    else {
+      localStorage.removeItem(category.name, JSON.stringify(favObj))
+      toast.error(`Link removed from favorites`)
+      setIsFavorite(false)
+    };
+    return
+  }
 
 
 
@@ -61,7 +65,7 @@ const LinkCard = ({ category }) => {
                   </a>
                   <div className="LinkCard-button-background" onClick={ () => addToFavorites(category) }>
                       <button>
-              <FontAwesomeIcon className="LinkCard-button" icon={faHeart} />
+              <FontAwesomeIcon className={ isFavorite ? "LinkCard-button favorite" : "LinkCard-button"} icon={faHeart} />
                       </button>
                   </div>
                   <div className="LinkCard-button-background">

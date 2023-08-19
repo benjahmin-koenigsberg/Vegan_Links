@@ -2,12 +2,12 @@ import React from 'react'
 import { useContext } from 'react';
 import LinkContext from '../context/LinkContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import '../styles/SearchBar.css'
 
 const SearchBar = () => {
 
-  const { content, setContent, allLinks, setInput, input, goHome, handleInput, updateContent, categories4 } = useContext(LinkContext)
+  const {  input,  handleInput, updateContent,} = useContext(LinkContext)
 
   return (
     <div className="m-2">

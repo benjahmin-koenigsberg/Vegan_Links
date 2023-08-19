@@ -21,7 +21,7 @@ import { Resturants } from './ResturantLinks';
 import { CompanionAnimals } from './CompanionAnimalLinks';
 import { Fashion } from './FashionLinks';
 import { Blogs } from './BlogLinks';
-
+import { AboutSections } from './AboutSections';
 
 
 export const allLinks =

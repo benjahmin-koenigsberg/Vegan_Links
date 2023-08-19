@@ -4,16 +4,16 @@ export const AboutSections = [
     {
         type: "About",
         name: "About this App",
-        description: "This App was created by Benjahmin Koenigsberg inspired by Vegan Hacktivists' The Vegan Cheat Sheet! It is intened to promote veganism through easy access to over 400 seperate vegan related links. Built using React, Font Awesome, Toastify. Clcik on the link below to check out the Vegan Hacktivist's site",
+        description: "This App was created by Benjahmin Koenigsberg inspired by Vegan Hacktivists' The Vegan Cheat Sheet! It is intened to promote veganism through easy access to over 400 seperate vegan related links. Built using React, Font Awesome, Toastify. Clcik on the link below to check out the Vegan Hacktivist's intro video",
         category: <p style={{ fontSize: '3rem' }}>🐔</p>,
-        link: "https://www.benjahminkoenigsberg.com",
+        link: "https://youtu.be/jaW8n1pd97U",
     },
     {
         type: "About",
         name: "The Public GitHub Repo for this app",
         description: "I am open to contributions of feedback for this app. Click the link below to ocheck out this repo on my GitHub",
         category: <p style={{ fontSize: '3rem' }}>📂</p>,
-        link: "https://www.benjahminkoenigsberg.com",
+        link: "https://github.com/benjahmin-koenigsberg/Vegan_Links",
     },
     {
         type: "About",
@@ -35,7 +35,7 @@ export const AboutSections = [
         name: "Follow me on LinkedIn",
         description: "Click o link below to connect on LinkedIn. I loved to connect about veganism, software engineering or health",
         category: <p style={{ fontSize: '3rem' }}>🖇️</p>,
-        link: "https://www.benjahminkoenigsberg.com",
+        link: "https://www.linkedin.com/in/benjamin-koenigsberg/",
     },
 
 ]

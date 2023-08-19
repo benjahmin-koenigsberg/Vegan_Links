@@ -8,14 +8,14 @@ import LinkContext from '../context/LinkContext'
 
 const Content = () => {
 
-const { content, setContent, allLinks, input, setInput, categories4 } = useContext(LinkContext)
+const { content } = useContext(LinkContext)
 
 
   return (
     <>
       <SearchBar />
       <div className='Content-container'>
-        { !content[0].link ? content.map( (category, index) => <CategoryCard category={category}
+        { !content[0]?.link ? content.map( (category, index) => <CategoryCard category={category}
           key={index}
            />
         ) : content.map((category, index) => <LinkCard category={category} key={index} />
