@@ -5,12 +5,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LinkContext from '../context/LinkContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy, faHeart, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faHeart, faLink, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import "../styles/LinkCard.css";
 
 const LinkCard = ({ category }) => {
 
-  const { isFavorite, setIsFavorite, favoritesArray, setFavoritesArray, addToFavorites, copyLink } = useContext(LinkContext)
+  const { isFavorite, setIsFavorite, favoritesArray, setFavoritesArray, addToFavorites, copyLink, goToFavs } = useContext(LinkContext)
 
 
   // const addToFavorites = (category) => {
@@ -61,7 +61,7 @@ const LinkCard = ({ category }) => {
                   </a>
                   <div className="LinkCard-button-background" onClick={ () => addToFavorites(category) }>
                       <button>
-                          <FontAwesomeIcon className={ isFavorite ? "LinkCard-button" : "LinkCard-button"} icon={faHeart} />
+              <FontAwesomeIcon className="LinkCard-button" icon={faHeart} />
                       </button>
                   </div>
                   <div className="LinkCard-button-background">

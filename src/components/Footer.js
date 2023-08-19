@@ -24,6 +24,7 @@ const {
   handleMenu,
   goHome,
   goAbout,
+  goToFavs,
 } = useContext(LinkContext)
 
 
@@ -45,7 +46,7 @@ const {
           icon={faShuffle}
           className="text-4xl Footer-icon" onClick={shuffleContent}></FontAwesomeIcon>
 
-        <FontAwesomeIcon icon={faHeart} className="text-4xl Footer-icon" onClick={getStorage} onDoubleClickCapture={clearStorage} ></FontAwesomeIcon>
+        <FontAwesomeIcon icon={faHeart} className="text-4xl Footer-icon" onClick={goToFavs} onDoubleClickCapture={clearStorage} ></FontAwesomeIcon>
       </div>
     </>
   );
