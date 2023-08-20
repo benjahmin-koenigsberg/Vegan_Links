@@ -1,0 +1,12 @@
+.Content-container{
+  padding: 0;
+  width: 100%;
+  //height: 75vh;
+  height: calc(100vh - 158px - 80px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+  margin: 0 auto;
+  background-color: 	#DCDCDC;
+}
