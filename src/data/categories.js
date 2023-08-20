@@ -1,5 +1,3 @@
-/** @format */
-
 export const categories4 = [
   { type: "category", name: "Movies", emoji: "🎞️" },
   { type: "category", name: "Podcasts", emoji: "🎙️" },

@@ -4,6 +4,7 @@ import { categories4 } from "../data/categories";
 import { AboutSections } from "../data/AboutSections";
 import "../styles/LinkCard.css";
 import { toast } from "react-toastify";
+import MenuModal from "../components/MenuModal";
 
 const LinkContext = createContext();
 
@@ -29,6 +30,7 @@ export const LinkProvider = ({ children }) => {
   };
 
   function handleContent(e) {
+       MenuModal ? setMenuModal(false) : setMenuModal(false)
     //setMenuModal((prev) => !prev);
     const filteredLinks = allLinks.filter(
       (element) => element.type === e.currentTarget.id

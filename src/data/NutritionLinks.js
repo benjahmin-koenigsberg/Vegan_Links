@@ -160,4 +160,13 @@ export const Nutrition = [
         link: "https://i.imgur.com/Pp2Sogg.jpg",
         "": "",
     },
+    {
+        type: "Health & Nutrition",
+        name: "Vegan Fitness: Best Tips",
+        category: "17 videos",
+        author: "",
+        description: "",
+        link: "https://veganplaylist.org/playlist/vegan-fitness-best-tips-what-to-eat",
+        "": "",
+    },
 ]

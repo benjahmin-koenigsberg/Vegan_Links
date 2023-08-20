@@ -1,6 +1,15 @@
 export const Arguments = [
     {
         type: "Arguments",
+        name: "30 Arguments Against Veganism Debunked",
+        category: "30 videos",
+        author: "",
+        description: "",
+        link: "https://veganplaylist.org/playlist/30-arguments-against-veganism-debunked",
+        "": "",
+    },
+    {
+        type: "Arguments",
         name: "Can You Love Animals and Eat Them?",
         category: "",
         author: "",

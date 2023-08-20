@@ -35,4 +35,13 @@ export const Speaches = [
         link: "https://www.youtube.com/watch?v=gcVR2OVxPYw",
         "": "",
     },
+    {
+        type: "Speaches",
+        name: "Inspirational Speeches that will change your life",
+        category: "7 videos",
+        author: "",
+        description: "",
+        link: "https://veganplaylist.org/playlist/speeches-that-will-change-your-life",
+        "": "",
+    },
 ]
