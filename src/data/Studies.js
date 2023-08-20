@@ -28,16 +28,6 @@ export const Studies = [
     },
 
 
-
-    {
-        type: "Studies",
-        name: "The Easy Vegan: Quick Vegan Recipes",
-        category: "11 videos",
-        author: "",
-        description: "",
-        link: "https://veganplaylist.org/playlist/the-easy-vegan-quick-vegan-recipes",
-        "": "",
-    },
     {
         type: "Studies",
         name: "Association of Animal and Plant Protein Intake With All-Cause and Cause-Specific Mortality.",
