@@ -15,14 +15,14 @@ body, html {
 } */
 
 body{
-  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: none;
+  box-sizing: border-box;
 }
 
 .App {
   text-align: center;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -33,3 +33,5 @@ body{
 }
 
 
+.main-content {
+}

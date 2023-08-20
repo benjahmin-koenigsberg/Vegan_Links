@@ -10,7 +10,7 @@ import "../styles/LinkCard.css";
 
 const LinkCard = ({ category }) => {
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(null);
 
 
   const { copyLink } = useContext(LinkContext)

@@ -19,7 +19,7 @@ const [content, setContent] = useState(categories4)
     <LinkProvider>
     <div className="App">
       <Header />
-     <Content />
+     <Content className='main-content' />
       <Footer menuModal={menuModal} setMenuModal={setMenuModal} content={content} setContent={setContent} allLinks={allLinks} Faq={Faq} />
     </div>
     </LinkProvider>
