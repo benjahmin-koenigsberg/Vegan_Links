@@ -12,15 +12,35 @@
   left: 15%;
   right: 15%;
   border-radius: 1rem;
+
 }
+
+
+/* .MenuModal-container{
+  overflow: scroll;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: gray;
+  background-color: #C0C0C0;
+  opacity: 0.95;
+  border-radius: 0;
+  padding: 2rem;
+} */
+
 
 .MenuModal-category{
 margin: .75rem;
 cursor: pointer;
 transition: all .2s ease-in-out;
+font-weight: bold;
 }
 
 .MenuModal-category:hover{
 transform: scale(1.2);
-font-weight: bold;
+text-decoration: underline;
 }

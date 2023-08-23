@@ -7,24 +7,26 @@
 *{
   font-family: 'IBM Plex Mono', monospace;
 }
-/*
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-} */
 
 body{
   margin: 0;
   padding: 0;
   overflow: none;
   box-sizing: border-box;
+
 }
 
 .App {
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+    display:grid;
+  grid-template-rows:auto 1fr auto;
+  grid-template-columns:100%;
+   /* fallback height */
+  min-height:80vh;
+   /* new small viewport height for modern browsers */
+  min-height:100svh;
 }
 
 
