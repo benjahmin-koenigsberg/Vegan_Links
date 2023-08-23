@@ -4,11 +4,10 @@ export const categories4 = [
   { type: "category", name: "Books", emoji: "📚" },
 
   { type: "category", name: "Speaches", emoji: "🗣️" },
-  { type: "category", name: "Studies", emoji: "🔬"},
+  { type: "category", name: "Studies", emoji: "🔬" },
   { type: "category", name: "Health & Nutrition", emoji: "🥦" },
 
 
-  { type: "category", name: "Protien Myths Debunked", emoji: "🧬" },
   { type: "category", name: "Arguments", emoji: "😳" },
   { type: "category", name: "Animal Ag. Statistics", emoji: "📊" },
 

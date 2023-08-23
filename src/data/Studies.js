@@ -150,6 +150,14 @@ export const Studies = [
     },
     {
         type: "Studies",
+        name: "Relevance of protein fermentation to gut health.",
+        category: "",
+        author: "",
+        description: "",
+        link: "http://www.ncbi.nlm.nih.gov/pubmed/22121108",
+    },
+    {
+        type: "Studies",
         name: "Relation Between Progression and Regression of Atherosclerotic Left Main Coronary Artery Disease and Serum Cholesterol Levels as Assessed With Serial Long-Term (>12 Months) Follow-Up Intravascular Ultrasound",
         category: "",
         author: "",
@@ -388,14 +396,7 @@ export const Studies = [
         description: "",
         link: "http://www.ncbi.nlm.nih.gov/pubmed/23169929",
     },
-    {
-        type: "Studies",
-        name: "Relevance of protein fermentation to gut health.",
-        category: "",
-        author: "",
-        description: "",
-        link: "http://www.ncbi.nlm.nih.gov/pubmed/22121108",
-    },
+
     {
         type: "Studies",
         name: "Determination of total N-nitroso compounds and their precursors in frankfurters, fresh meat, dried salted fish, sauces, tobacco, and tobacco smoke particulates.",
