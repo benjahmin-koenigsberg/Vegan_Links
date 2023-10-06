@@ -1,214 +1,43 @@
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *{
   font-family: 'IBM Plex Mono', monospace;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+  overflow: none;
+  box-sizing: border-box;
+
+}
+
 .App {
   text-align: center;
-  min-height: 100vh;
+  /* display: flex;
+  flex-direction: column; */
+    /* display:grid;
+  grid-template-rows:auto 1fr auto;
+  grid-template-columns:100%; */
+   /* fallback height */
+  min-height:80vh;
+   /* new small viewport height for modern browsers */
+  min-height:100svh;
   display: flex;
   flex-direction: column;
-}
-
-
-.Header-container {
-  width: 100%;
-  height: 5rem;
-  display: flex;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(58,179,0,1) 28%, rgba(0,212,255,1) 100%);
-  justify-content: center;
-  align-items: center;
-}
-
-.Header-header{
-  font-size: 2rem;
-}
-
-.Header-icon {
-  margin: 0 1rem;
-  font-size: 1.5rem;
-}
-
-
-.Footer-container{
-  width: 100%;
-  height: 5rem;
-  background-color: lightgray;
-  margin-top: auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-
-
-.Content-container{
-  padding: 0;
-  width: 100%;
-  height: 70vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow: scroll;
-  margin: auto 0;
-  background-color: 	#DCDCDC;
-}
-
-.CategoryCard-container{
-  height: 8rem;
-  width: 8rem;
-  background-color: gray;
-  margin: .5rem .5rem;
-  border-radius: 1rem;
-  display: flex;
-  padding: 0.5rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
--webkit-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
--moz-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
-
-}
-
-.LinkCard-container {
-  width: 95%;
-  background-color: gray;
-  margin: .5rem .5rem;
-  border-radius: 1rem;
-  display: flex;
-  padding: 0.25rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  -webkit-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
--moz-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
-}
-
-.LinkCard-inner-container{
-  width: 95%;
-  height: fit;
-  background-color: white;
-  border-radius: 1rem;
-  padding: 0.25rem;
-
-}
-
-.LinkCard-name{
-  color: black;
-  font-weight: 700;
-  //background: white;
-  width: 100%;
-}
-
-.LinkCard-category{
-  color: white;
-
-}
-
-.LinkCard-buttons-container{
-  display: flex;
+  max-width: 780px;
+  min-width: 320px;
   margin: auto;
-  width: max-content;
-
-}
-
-.LinkCard-button-background{
-  background-color: pink;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1.5rem;
-  cursor: pointer;
-  -webkit-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
-  -moz-box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
-  box-shadow: -2px 10px 5px -6px rgba(0,0,0,0.75);
-}
-
-.LinkCard-button-background:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-.LinkCard-button{
-  font-size: 1.5rem;
-
-}
-
-.CategoryCard-container:hover{
-transform: scale(115%);
-}
-
-.CategoryCard-name{
-font-size: .75rem;
-}
-
-.CategoryCard-emoji{
-font-size: 3.5rem;
-}
-
-
-.Footer-icon-border{
-  width: 4rem;
-  height: 4rem;
-  border-radius: 2rem;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.Footer-icon{
-filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-}
-
-.Footer-icon:active{
-  //box-shadow: 0 5px #666;
-  filter: drop-shadow(2px 3px 0px rgb(0 0 0 / 0.4));
-  transform: translateY(4px);
-}
-
-
-.MenuModal-container{
-  background-color: 	#C0C0C0;
-  height: 60vh;
-  width: 80%;
-  position: fixed;
-  bottom: 5rem;
-  overflow-x: scroll;
-  left: 10%;
-  right: 10%;
-  border-radius: 1rem;
-}
-
-.MenuModal-category{
-margin: .75rem;
-cursor: pointer;
-}
-
-.MenuModal-category:hover{
-transform: scale(125%);
-font-weight: bold;
+  border: 1px solid black;
+  /* border-radius: .25rem;
+  padding: .25rem; */
 }
 
 
 .dissapear{
   display: none;
-}
-
-.favorite{
-  color: red;
-}
-
-.copied{
-  color: lightblue;
 }
