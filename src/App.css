@@ -20,18 +20,24 @@ body{
   text-align: center;
   /* display: flex;
   flex-direction: column; */
-    display:grid;
+    /* display:grid;
   grid-template-rows:auto 1fr auto;
-  grid-template-columns:100%;
+  grid-template-columns:100%; */
    /* fallback height */
   min-height:80vh;
    /* new small viewport height for modern browsers */
   min-height:100svh;
+  display: flex;
+  flex-direction: column;
+  max-width: 780px;
+  min-width: 320px;
+  margin: auto;
+  border: 1px solid black;
+  /* border-radius: .25rem;
+  padding: .25rem; */
 }
 
 
 .dissapear{
   display: none;
 }
-
-

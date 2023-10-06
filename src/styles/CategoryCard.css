@@ -1,8 +1,8 @@
 .CategoryCard-container {
-  height: 5.5rem;
-  width: 5.5rem;
+  height: 6.25rem;
+  width: 6.25rem;
   background-color: gray;
-  margin: 0.25rem 0.25rem;
+  margin: 0.25rem;
   border-radius: 1rem;
   text-align: center;
   display: flex;
@@ -20,11 +20,37 @@
 }
 
 .CategoryCard-name {
-  font-size: 0.5rem;
-  font-size: .65rem;
+  font-size: .6rem;
 
 }
 
+
+
 .CategoryCard-emoji {
   font-size: 2rem;
+}
+
+
+
+@media screen and (min-width: 418px) {
+  .CategoryCard-container {
+height: 8rem;
+width: 8rem;
+}
+
+}
+
+@media screen and (min-width: 600px) {
+
+
+ .CategoryCard-name {
+  font-size: .8rem;
+}
+
+
+.CategoryCard-emoji {
+  font-size: 3.25rem;
+}
+
+
 }
