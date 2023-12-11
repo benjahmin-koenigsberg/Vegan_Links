@@ -55,7 +55,8 @@ const LinkCard = ({ category }) => {
           )
            : category.description}</p>
         <p className="LinkCard-category">{category?.category}</p>
-              { category.type === 'Frequently Asked Questions' ? ("") : (<div className="LinkCard-buttons-container">
+              { category.type === 'Frequently Asked Questions' ? ("") : (
+              <div className="LinkCard-buttons-container">
                   <a href={category.link} id="link">
                       <div className="LinkCard-button-background">
                           <button>

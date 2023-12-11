@@ -4,6 +4,7 @@ import LinkCard from './LinkCard'
 import SearchBar from './SearchBar'
 import '../styles/Content.css';
 import LinkContext from '../context/LinkContext'
+import LinkCardCopy from './LinkCardCopy';
 
 
 const Content = () => {
@@ -18,7 +19,9 @@ const { content } = useContext(LinkContext)
         { !content[0]?.link ? content.map( (category, index) => <CategoryCard category={category}
           key={index}
            />
-        ) : content.map((category, index) => <LinkCard category={category} key={index} />
+        // ) : content.map((category, index) => <LinkCard category={category} key={index} />
+        ) : content.map((category, index) => <LinkCardCopy category={category} key={index} />
+
         )}
       </div>
     </>
